@@ -4,7 +4,7 @@ let active = [""];
 
 let orderer = document.getElementById("order");
 
-window.onload = () => {
+window.onload = () => { 
   if(window.location.href.includes("?")){
     audioos = window.location.href.split("?list=")[1]
     audioos = audioos.split(",");
