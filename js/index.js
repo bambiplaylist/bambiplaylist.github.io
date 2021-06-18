@@ -51,15 +51,15 @@ const compare = (e) =>{
   
   renderItems(active)
  
-};
+}; 
 
 function allowDrop(ev) {
     ev.preventDefault();
-    draggedOver = ev.target.innerHTML
+    draggedOver = ev.target.innerHTML.split("href=\"")[1].split("\">")[0]
 }
 
 const setDragging = (e) =>{
-  dragging = e.target.innerHTML
+  dragging = e.target.innerHTML.split("href=\"")[1].split("\">")[0]
   console.log(dragging);
 }
 
