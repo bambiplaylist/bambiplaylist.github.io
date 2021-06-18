@@ -4,6 +4,24 @@ let active = [""];
 
 let orderer = document.getElementById("order");
 
+window.onload = () => {
+  if(window.location.href.includes("?")){
+    audioos = window.location.href.split("?list=")[1]
+    audioos = audioos.split(",");
+    for(i=0;i<audioos.length;i++){
+      audios.push(new Audio(files[parseInt(audioos[i])]));
+    }
+    audios.forEach(function(sound) {
+      audios.onended = onended;
+    });
+    indexes = [];
+    for(j=0;j<audios.length;j++){
+      indexes.push(files.indexOf(audios[i].src));
+    }
+    document.getElementById("permLink").innerText = window.location.href+"?list="+indexes.join(",");
+  }
+};
+
 let inputHandle = (e) => {
   active = [];
   for(i=0;i<list.length;i++){ 
@@ -17,7 +35,6 @@ let inputHandle = (e) => {
 var list2 = document.getElementById('order') 
 var nums = ["a"];
 var dragging, draggedOver;
-var isRight = 'Not in order!';
 
 const genRandom = () => {
   active = active.sort(() => Math.random() - 0.5)
@@ -65,13 +82,18 @@ const setDragging = (e) =>{
 var audios = [];
 var currentIndex = 0;
 
-let create = () => {\
+let create = () => {
   for(i=0;i<active.length;i++){
     audios.push(new Audio(active[i]));
   }
   audios.forEach(function(sound) {
     audios.onended = onended;
   });
+  indexes = [];
+  for(j=0;j<audios.length;j++){
+    indexes.push(files.indexOf(audios[i].src));
+  }
+  document.getElementById("permLink").innerText = window.location.href+"?list="+indexes.join(",");
 }
                     
 function onended(evt) {
