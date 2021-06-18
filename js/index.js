@@ -10,7 +10,7 @@ window.onload = () => {
     audioos = audioos.split(",");
     for(i=0;i<audioos.length;i++){
       audios.push(new Audio(files[parseInt(audioos[i])]));
-    }
+    } 
     audios.forEach(function(sound) {
       audios.onended = onended;
     });
