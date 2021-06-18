@@ -14,7 +14,7 @@ let inputHandle = (e) => {
   
 }
 
-var list = document.getElementById('order')
+var list2 = document.getElementById('order')
 var nums = [0, 1, 2, 3, 4, 5, 6];
 var dragging, draggedOver;
 var randomNums = [0, 1, 2, 3, 4, 5, 6];
@@ -26,7 +26,7 @@ const genRandom = () => {
 }
 
 const renderItems = (data) =>{
-  list.innerText = ''
+  list2.innerText = ''
   data.forEach(num=>{
     var node = document.createElement("li");    
     node.draggable = true
@@ -35,7 +35,7 @@ const renderItems = (data) =>{
     node.addEventListener('dragover', allowDrop)
     var textnode = document.createTextNode(`${num}`);
      node.appendChild(textnode);
-    list.appendChild(node)
+    list2.appendChild(node)
   })
   dragging = null
   draggedOver = null
