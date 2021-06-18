@@ -20,6 +20,28 @@ function detectBrowser() {
     }
 } 
 
+function alertBox(msg) {
+    zz = document.createElement("div");
+    zz.className = "alert";
+    zz.innerHTML = `<span class="closebtn">&times;</span>` + msg + ``;
+    document.querySelector("#alertBoxs").appendChild(zz);
+
+    zz.onclick = function () {
+        div = zz;
+        div.style.opacity = "0";
+        setTimeout(function () {
+            div.style.display = "none";
+        }, 600);
+    }
+    setTimeout(function (that) {
+        var div = that;
+        div.style.opacity = "0";
+        setTimeout(function () {
+            div.style.display = "none";
+        }, 600);
+    }, 3000, zz);
+}
+
 window.onload = () => { 
   if(window.location.href.includes("?")){
     audioos = window.location.href.split("?list=")[1]
