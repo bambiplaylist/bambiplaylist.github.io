@@ -19,6 +19,7 @@ window.onload = () => {
       indexes.push(files.indexOf(audios[j].src));
     }
     document.getElementById("permLink").innerText = window.location.href+"?list="+indexes.join(",");
+    document.getElementById("permLink").href = window.location.href+"?list="+indexes.join(",");
   }
 };
 
@@ -94,6 +95,7 @@ let create = () => {
     indexes.push(files.indexOf(audios[j].src));
   }
   document.getElementById("permLink").innerText = window.location.href+"?list="+indexes.join(",");
+  document.getElementById("permLink").href = window.location.href+"?list="+indexes.join(",");
   return false;
 }
                     
