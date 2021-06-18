@@ -4,15 +4,35 @@ let active = [""];
 
 let orderer = document.getElementById("order");
 
+function detectBrowser() { 
+    if((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1 ) {
+        return 'Opera';
+    } else if(navigator.userAgent.indexOf("Chrome") != -1 ) {
+        return 'Chrome';
+    } else if(navigator.userAgent.indexOf("Safari") != -1) {
+        return 'Safari';
+    } else if(navigator.userAgent.indexOf("Firefox") != -1 ){
+        return 'Firefox';
+    } else if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )) {
+        return 'IE';//crap
+    } else {
+        return 'Unknown';
+    }
+} 
+
 window.onload = () => { 
   if(window.location.href.includes("?")){
     audioos = window.location.href.split("?list=")[1]
     audioos = audioos.split(",");
     for(i=0;i<audioos.length;i++){
       audios.push(new Audio(files[parseInt(audioos[i])]));
+      
     } 
     audios.forEach(function(sound) {
-      audios.onended = onended;
+      if(detectBrowser()=="Firefox"){
+        sound.load();
+      }
+      sound.onended = onended;
     });
     indexes = [];
     for(j=0;j<audios.length;j++){
@@ -91,6 +111,9 @@ let create = () => {
     audios.push(new Audio(active[i]));
   }
   audios.forEach(function(sound) {
+    if(detectBrowser()=="Firefox"){
+      sound.load();
+    }
     sound.onended = onended;
   });
   indexes = [];
