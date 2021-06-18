@@ -58,11 +58,11 @@ const compare = (e) =>{
 
 function allowDrop(ev) {
     ev.preventDefault();
-    draggedOver = parseInt(ev.target.innerText)
+    draggedOver = ev.target.innerText
 }
 
 const setDragging = (e) =>{
-  dragging = parseInt(e.target.innerText)
+  dragging = e.target.innerText
 }
 
 genRandom()
