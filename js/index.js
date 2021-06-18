@@ -9,7 +9,7 @@ let inputHandle = (e) => {
   for(i=0;i<list.length;i++){
     if(list[i].checked){
       active.push(files[i]);
-    }
+    } 
   }
   
   for(i=0;i<active.length)
