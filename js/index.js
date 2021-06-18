@@ -12,8 +12,7 @@ let inputHandle = (e) => {
     }  
   }
   genRandom()
-}
-
+} 
 var list2 = document.getElementById('order')
 var nums = ["a"];
 var dragging, draggedOver;
