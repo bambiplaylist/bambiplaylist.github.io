@@ -19,7 +19,7 @@
         <br />
         <div id="content">
           <hr />
-          <form onInput="inputHandle();" onSubmit="create();">
+          <form onInput="inputHandle();" onSubmit="return false;">
             <h3>Step 1: Select Your Files</h3>
             <div class="form-group">
               
@@ -170,7 +170,7 @@
               
             </div>
             <h3>Step 3: Click Create</h3>
-            <button type="submit" class="btn btn-primary">Create</button>
+            <button onclick="create()" class="btn btn-primary">Create</button>
             <h3>Step 4: Listen/Share!</h3>
             <button id="play" class="btn btn-primary">Play</button><button id="stop" class="btn btn-primary">Stop</button>
             <hr/>
