@@ -86,6 +86,7 @@ var audios = [];
 var currentIndex = 0;
 
 let create = () => {
+  audios = [];
   for(i=0;i<active.length;i++){
     audios.push(new Audio(active[i]));
   }
@@ -105,7 +106,7 @@ function onended(evt) {
   currentIndex = (currentIndex + 1) % audios.length; // increment our index
   audios[currentIndex].play(); // play the next sound
 }
-                    
+
 document.getElementById("play").onclick = () => {
   audios[0].play();
 };
