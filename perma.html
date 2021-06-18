@@ -1,1 +1,57 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags --> 
+  <title>Bambi Playlist Creator | Permalink</title> 
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet"> 
+  <meta name="description" content="Bambi Playlist Creator, a sharing/creation platform for Bambi Sleep Playlists" />
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EWDFYH4Z6D"></script> 
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-EWDFYH4Z6D');
+  </script>
+</head>    
+
+<body>
+  <div class="container" style="width: 650px;"> 
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="text-center">Bambi Playlist Creator</h1>
+        <h3 style="color:red;">WARNING: In order for the playlist order to work, you must not drag with the white part (the link) but with the dark gray part. If you accidentally do this, just click and unclick a checkbox and it will refresh</h3>
+        <br />
+        <div id="content">
+          <hr />
+          <form onInput="inputHandle();" onSubmit="return false;">
+            <h3>Click play to listen!</h3>
+            <button id="play" class="btn btn-primary">Play</button><button id="stop" class="btn btn-primary">Pause</button>
+            <hr/>
+          </form>
+          <p class="text-center">Permalink: <a id="permLink" href=""></a></p>
+          <p class="text-center"><a href="/about.html">About</a></p>
+        </div>
+      </div>
+    </div>
+  </div><br><br><br><br><br><br><br><br><br>
+  <footer class="footer">
+    <div class="footer-copyright text-center py-3">
+      © KatieGirl 2021 | KatieGirl#3059 <a href="https://discord.gg/ucY2jU2r">https://discord.gg/ucY2jU2r</a> - All of the Bambi/Bambi Sleep copyright goes to the creator or Bambi Sleep (<a href="https://bambisleep.blogspot.com/">https://bambisleep.blogspot.com/</a>)
+    </div>
+  </footer>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/index.js"></script>
+</body>
+
+</html>
