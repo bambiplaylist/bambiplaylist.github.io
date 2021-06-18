@@ -11,13 +11,13 @@ let inputHandle = (e) => {
       active.push(files[i]); 
     }  
   }
-  
+   
 }
 
 var list2 = document.getElementById('order')
-var nums = [0, 1, 2, 3, 4, 5, 6];
+var nums = ["a","b","c"];
 var dragging, draggedOver;
-var randomNums = [0, 1, 2, 3, 4, 5, 6];
+var randomNums = ["a","b","c"];
 var isRight = 'Not in order!';
 
 const genRandom = () => {
