@@ -7,7 +7,7 @@ let orderer = document.getElementById("order");
 let inputHandle = (e) => {
   active = [];
   for(i=0;i<list.length;i++){
-    if(list[i].checked){ 
+    if(list[i].checked){  
       active.push("<a href='"+files[i]+"'>"+files[i].split("/")[5].split(".mp3")[0].replaceAll("+"," ")+"</a>"); 
     }  
   }
