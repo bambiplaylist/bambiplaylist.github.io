@@ -62,5 +62,29 @@ const setDragging = (e) =>{
   dragging = e.target.innerHTML.split("href=\"")[1].split("\">")[0]
 }
 
+var audios = [];
+var currentIndex = 0;
 
- 
+let create = () => {\
+  for(i=0;i<active.length;i++){
+    audios.push(new Audio(active[i]));
+  }
+  audios.forEach(function(sound) {
+    audios.onended = onended;
+  });
+}
+                    
+function onended(evt) {
+  currentIndex = (currentIndex + 1) % audios.length; // increment our index
+  audios[currentIndex].play(); // play the next sound
+}
+                    
+document.getElementById("play").onclick = () => {
+  sounds[0].play();
+};
+                    
+document.getElementById("stop").onclick = () => {
+  for(i=0;i<audios.length;i++){
+    audios[i].stop();
+  }
+};
