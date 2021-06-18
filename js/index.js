@@ -94,6 +94,7 @@ let create = () => {
     indexes.push(files.indexOf(audios[i].src));
   }
   document.getElementById("permLink").innerText = window.location.href+"?list="+indexes.join(",");
+  return false;
 }
                     
 function onended(evt) {
