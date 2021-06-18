@@ -60,7 +60,6 @@ function allowDrop(ev) {
 
 const setDragging = (e) =>{
   dragging = e.target.innerHTML.split("href=\"")[1].split("\">")[0]
-  console.log(dragging);
 }
 
 
