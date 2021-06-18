@@ -112,6 +112,6 @@ document.getElementById("play").onclick = () => {
                     
 document.getElementById("stop").onclick = () => {
   for(i=0;i<audios.length;i++){
-    audios[i].stop();
+    audios[i].pause();
   }
 };
