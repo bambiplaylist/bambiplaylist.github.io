@@ -103,7 +103,7 @@ function onended(evt) {
 }
                     
 document.getElementById("play").onclick = () => {
-  sounds[0].play();
+  audios[0].play();
 };
                     
 document.getElementById("stop").onclick = () => {
