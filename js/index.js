@@ -10,7 +10,7 @@ let inputHandle = (e) => {
     if(list[i].checked){  
       active.push(files[i]); 
     }   
-  }
+  } 
   genRandom()
 } 
 
