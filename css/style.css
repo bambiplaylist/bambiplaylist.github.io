@@ -6,11 +6,20 @@
    text-align: center;
 }
 
+body {
+   background-color: #85007c;
+   color: #85007c; 
+}
+
 li {
    color: #ffffff;
    background-color: #4f4f4f;
 }
- 
+
+a {
+   color: #ffcffc;
+}
+
 .ss {
         user-select: none;
         -moz-user-select: none;
