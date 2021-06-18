@@ -31,7 +31,8 @@ const renderItems = (data) =>{
     node.addEventListener('drag', setDragging) 
     node.addEventListener('drop', compare) 
     node.addEventListener('dragover', allowDrop)
-    var textnode = document.createTextNode(`${num}`);
+    var textnode = document.createElement("span");
+    textnode.innerHTML = `${num}`;
      node.appendChild(textnode);
     list2.appendChild(node)
   })
