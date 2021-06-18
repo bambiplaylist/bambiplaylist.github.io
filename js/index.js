@@ -30,7 +30,7 @@ let inputHandle = (e) => {
       active.push(files[i]); 
     }   
   }  
-  genRandom()
+  renderItems(active)
 } 
  
 var list2 = document.getElementById('order') 
