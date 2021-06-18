@@ -12,7 +12,6 @@ let inputHandle = (e) => {
     } 
   }
   
-  for(i=0;i<active.length)
 }
 
 var list = document.getElementById('order')
