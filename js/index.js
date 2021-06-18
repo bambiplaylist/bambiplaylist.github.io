@@ -73,11 +73,13 @@ const compare = (e) =>{
 
 function allowDrop(ev) {
     ev.preventDefault();
-    draggedOver = ev.target.innerHTML.split("href=\"")[1].split("\">")[0]
+    draggedOver = ev.target.innerHTML.split("href=\"")[1].split("\">")[0];
+    audios = [];
 }
 
 const setDragging = (e) =>{
-  dragging = e.target.innerHTML.split("href=\"")[1].split("\">")[0]
+  dragging = e.target.innerHTML.split("href=\"")[1].split("\">")[0];
+  audios = [];
 }
 
 var audios = [];
