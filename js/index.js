@@ -53,11 +53,11 @@ const compare = (e) =>{
 
 function allowDrop(ev) {
     ev.preventDefault();
-    draggedOver = ev.target.innerText
+    draggedOver = ev.target.innerHTML
 }
 
 const setDragging = (e) =>{
-  dragging = e.target.innerText
+  dragging = e.target.innerHTML
 }
 
 
