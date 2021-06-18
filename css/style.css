@@ -6,6 +6,11 @@
    text-align: center;
 }
 
+li {
+   color: #ffffff;
+   background-color: #4f4f4f;
+}
+
 .ss {
         user-select: none;
         -moz-user-select: none;
