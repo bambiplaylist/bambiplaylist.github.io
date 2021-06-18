@@ -32,8 +32,11 @@ const renderItems = (data) =>{
     node.addEventListener('drag', setDragging) 
     node.addEventListener('drop', compare) 
     node.addEventListener('dragover', allowDrop)
-    var textnode = document.createTextNode(`${num}`);
-     node.appendChild(textnode);
+    var textnode = document.createElement(`a`);
+    textnode.className = "ss";
+    textnode.href = `${num}`;
+    textnode.href = `${num.split("/")[5].split(".mp3")[0].replaceAll("+"," ")}`;
+    node.appendChild(textnode);
     list2.appendChild(node)
   })
   dragging = null
