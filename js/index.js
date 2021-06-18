@@ -16,7 +16,7 @@ window.onload = () => {
     });
     indexes = [];
     for(j=0;j<audios.length;j++){
-      indexes.push(files.indexOf(audios[i].src));
+      indexes.push(files.indexOf(audios[j].src));
     }
     document.getElementById("permLink").innerText = window.location.href+"?list="+indexes.join(",");
   }
@@ -91,7 +91,7 @@ let create = () => {
   });
   indexes = [];
   for(j=0;j<audios.length;j++){
-    indexes.push(files.indexOf(audios[i].src));
+    indexes.push(files.indexOf(audios[j].src));
   }
   document.getElementById("permLink").innerText = window.location.href+"?list="+indexes.join(",");
   return false;
