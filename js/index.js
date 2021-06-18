@@ -87,7 +87,7 @@ let create = () => {
     audios.push(new Audio(active[i]));
   }
   audios.forEach(function(sound) {
-    audios.onended = onended;
+    sound.onended = onended;
   });
   indexes = [];
   for(j=0;j<audios.length;j++){
