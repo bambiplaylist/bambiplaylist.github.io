@@ -35,7 +35,7 @@ const renderItems = (data) =>{
     var textnode = document.createElement(`a`);
     textnode.className = "ss";
     textnode.href = `${num}`;
-    textnode.href = `${num.split("/")[5].split(".mp3")[0].replaceAll("+"," ")}`;
+    textnode.innerText = `${num.split("/")[5].split(".mp3")[0].replaceAll("+"," ")}`;
     node.appendChild(textnode);
     list2.appendChild(node)
   })
@@ -60,6 +60,7 @@ function allowDrop(ev) {
 
 const setDragging = (e) =>{
   dragging = e.target.innerHTML
+  console.log(dragging);
 }
 
 
