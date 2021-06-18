@@ -5,3 +5,7 @@ files = [
   ["https://download1080.mediafire.com/vfyby5c0cy3g/qakm12363xmg6yx/01+Blowup+Pleasure+Toy.mp3","https://download942.mediafire.com/z02iuiti66yg/m3n8eow1g9dg261/02+Perfect+Bimbo+Maid.mp3","https://download1334.mediafire.com/hevu9fhiexcg/b4ucpzd63hfjs45/03+Restrained+and+Milked.mp3"],
   ["https://download948.mediafire.com/45ix91vhoavg/lih3vc45g0jwjx0/01+Bimbo+Giggletime.mp3","https://download1496.mediafire.com/cblzoys0cigg/g8n5l6w6wosvizp/02+Mindlocked+Cock+Zombie.mp3"],
 ]
+
+let inputHandle = (e) => {
+  console.log(e);
+}
