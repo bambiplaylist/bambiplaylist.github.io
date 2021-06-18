@@ -8,7 +8,7 @@ let inputHandle = (e) => {
   active = [];
   for(i=0;i<list.length;i++){
     if(list[i].checked){  
-      active.push("<a href='"+files[i]+"'>"+files[i].split("/")[5].split(".mp3")[0].replaceAll("+"," ")+"</a>"); 
+      active.push(files[i]); 
     }  
   }
   genRandom()
@@ -32,8 +32,9 @@ const renderItems = (data) =>{
     node.addEventListener('drag', setDragging) 
     node.addEventListener('drop', compare) 
     node.addEventListener('dragover', allowDrop)
-    var textnode = document.createElement("span");
-    textnode.innerHTML = `${num}`;
+    var textnode = document.createElement("a");
+    textnode.href = `${num}`;
+    textnode.innerText = `${num.split("/")[5].split(".mp3")[0].replaceAll("+"," ")}`;
      node.appendChild(textnode);
     list2.appendChild(node)
   })
