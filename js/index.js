@@ -74,7 +74,6 @@ let inputHandle = (e) => {
     }   
   }  
   renderItems(active)
-    create();
 } 
  
 var list2 = document.getElementById('order') 
@@ -103,6 +102,7 @@ const renderItems = (data) =>{
   })
   dragging = null
   draggedOver = null
+    create();
 }
 
 const compare = (e) =>{
