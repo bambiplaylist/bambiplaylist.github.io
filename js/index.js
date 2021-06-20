@@ -6,7 +6,7 @@ let active = [""];
 let orderer = document.getElementById("order"); 
 
 function auDur() {
-    audur = 0;
+    audur = 0; 
     for(k=0;k<audios.length;k++){
         audur += audios[k].duration;
     }
