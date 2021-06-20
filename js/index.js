@@ -175,7 +175,7 @@ function onended(evt) {
 }
 
 document.getElementById("play").onclick = () => {
-  audios[0].play();
+  audios[currentIndex].play();
 };
                     
 document.getElementById("stop").onclick = () => {
