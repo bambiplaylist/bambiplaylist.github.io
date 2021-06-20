@@ -15,7 +15,7 @@ function detectBrowser() {
         return 'Firefox';
     } else if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )) {
         return 'IE';//crap
-    } else {
+    } else { 
         return 'Unknown';
     }
 } 
