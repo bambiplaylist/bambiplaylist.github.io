@@ -10,8 +10,6 @@ function auDur() {
     for(k=0;k<audios.length;k++){
         audur += audios[k].duration;
     } 
-    console.log(audur)
-    console.log(jsAudDur(audur));
     document.getElementById("dur").innerText = jsAudDur(audur);
 }
 
@@ -82,7 +80,7 @@ window.onload = () => {
     document.getElementById("permLink").innerText = window.location.href.split('io/')[0]+"io/perma.html?list="+indexes.join(",");
     document.getElementById("permLink").href = window.location.href.split('io/')[0]+"io/perma.html?list="+indexes.join(",");
     document.getElementById("nfils").innerText = indexes.length;
-    setTimeout(auDur,2500);
+    setTimeout(auDur,5000);
     
   }
 };
