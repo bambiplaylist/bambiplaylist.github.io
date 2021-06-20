@@ -74,7 +74,7 @@ window.onload = () => {
     document.getElementById("nfils").innerText = indexes.length;
     audur = 0;
       for(k=0;k<audios.length;k++){
-        audur += audios[i].duration;
+        audur += audios[k].duration;
     }
     document.getElementById("dur").innerText = jsAudDur(audur);
     
