@@ -43,6 +43,14 @@ function alertBox(msg) {
     }, 3000, zz);
 }
 
+function jsAudDur(audc) {
+    hours = "0" + Math.floor((audc / 60)/60);
+    minutes = "0" + Math.floor(audc / 60);
+    seconds = "0" + (Math.floor(audc) - minutes * 60);
+    dur = hours.substr(-2) + ":" + minutes.substr(-2) + ":" + seconds.substr(-2);
+    return dur;
+}
+
 window.onload = () => { 
   if(window.location.href.includes("?")){
     audioos = window.location.href.split("?list=")[1]
@@ -63,6 +71,13 @@ window.onload = () => {
     }
     document.getElementById("permLink").innerText = window.location.href.split('io/')[0]+"io/perma.html?list="+indexes.join(",");
     document.getElementById("permLink").href = window.location.href.split('io/')[0]+"io/perma.html?list="+indexes.join(",");
+    document.getElementById("nfils").innerText = indexes.length;
+    audur = 0;
+      for(k=0;k<audios.length;k++){
+        audur += audios[i].duration;
+    }
+    document.getElementById("dur").innerText = jsAudDur(audur);
+    
   }
 };
 
