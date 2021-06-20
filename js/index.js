@@ -61,8 +61,8 @@ window.onload = () => {
     for(j=0;j<audios.length;j++){
       indexes.push(files.indexOf(audios[j].src));
     }
-    document.getElementById("permLink").innerText = window.location.href+"perma.html?list="+indexes.join(",");
-    document.getElementById("permLink").href = window.location.href+"perma.html?list="+indexes.join(",");
+    document.getElementById("permLink").innerText = window.location.href.split('io/')[0]+"io/perma.html?list="+indexes.join(",");
+    document.getElementById("permLink").href = window.location.href.split('io/')[0]+"io/perma.html?list="+indexes.join(",");
   }
 };
 
