@@ -7,7 +7,7 @@ let orderer = document.getElementById("order");
 
 function detectBrowser() {    
     if((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1 ) { 
-        return 'Opera';
+        return 'Opera'; 
     } else if(navigator.userAgent.indexOf("Chrome") != -1 ) {   
         return 'Chrome'; 
     } else if(navigator.userAgent.indexOf("Safari") != -1) {
