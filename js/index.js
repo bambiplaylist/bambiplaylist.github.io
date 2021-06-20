@@ -115,15 +115,35 @@ const compare = (e) =>{
  
 }; 
 
+var decodeEntities = (function() {
+  // this prevents any overhead from creating the object each time
+  var element = document.createElement('div');
+
+  function decodeHTMLEntities (str) {
+    if(str && typeof str === 'string') {
+      // strip script/html tags
+      str = str.replace(/<script[^>]*>([\S\s]*?)<\/script>/gmi, '');
+      str = str.replace(/<\/?\w(?:[^"'>]|"[^"]*"|'[^']*')*>/gmi, '');
+      element.innerHTML = str;
+      str = element.textContent;
+      element.textContent = '';
+    }
+
+    return str;
+  }
+
+  return decodeHTMLEntities;
+})();
+
 function allowDrop(ev) {
     ev.preventDefault();
-    draggedOver = ev.target.innerHTML.split("href=\"")[1].split("\">")[0];
+    draggedOver = decodeEntities(ev.target.innerHTML.split("href=\"")[1].split("\">")[0]);
     console.log(draggedOver+" do");
     audios = [];
 }
 
 const setDragging = (e) =>{
-  dragging = e.target.innerHTML.split("href=\"")[1].split("\">")[0];
+  dragging =  decodeEntities(e.target.innerHTML.split("href=\"")[1].split("\">")[0]);
     console.log(dragging+" d");
   audios = [];
 }
