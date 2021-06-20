@@ -79,7 +79,7 @@ ul {
    user-select: none;
 }
 
-li a {
+li.s a {
    display: block;
    text-align: center;
    text-decoration: none;
