@@ -5,6 +5,14 @@ let active = [""];
 
 let orderer = document.getElementById("order"); 
 
+function auDur() {
+    audur = 0;
+    for(k=0;k<audios.length;k++){
+        audur += audios[k].duration;
+    }
+    document.getElementById("dur").innerText = jsAudDur(audur);
+}
+
 function detectBrowser() {    
     if((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1 ) { 
         return 'Opera'; 
@@ -72,11 +80,7 @@ window.onload = () => {
     document.getElementById("permLink").innerText = window.location.href.split('io/')[0]+"io/perma.html?list="+indexes.join(",");
     document.getElementById("permLink").href = window.location.href.split('io/')[0]+"io/perma.html?list="+indexes.join(",");
     document.getElementById("nfils").innerText = indexes.length;
-    audur = 0;
-      for(k=0;k<audios.length;k++){
-        audur += audios[k].duration;
-    }
-    document.getElementById("dur").innerText = jsAudDur(audur);
+    auDur();
     
   }
 };
