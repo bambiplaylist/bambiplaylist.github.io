@@ -33,6 +33,10 @@ body {
 }
 
 li {
+   display: block;
+   text-align: center;
+   text-decoration: none;
+   float: left;
    color: #ffffff;
    background-color: #4f4f4f;
    padding: 10px;
