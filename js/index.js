@@ -53,7 +53,7 @@ function alertBox(msg) {
 
 function jsAudDur(audc) {
     hours = "0" + Math.floor((audc / 60)/60);
-    minutes = "0" + Math.floor(audc / 60);
+    minutes = "0" + Math.floor(audc / 60) - (60 * Math.floor((audc / 60)/60));
     seconds = "0" + (Math.floor(audc) - minutes * 60);
     dur = hours.substr(-2) + ":" + minutes.substr(-2) + ":" + seconds.substr(-2);
     return dur;
