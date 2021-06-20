@@ -6,7 +6,7 @@ let active = [""];
 let orderer = document.getElementById("order"); 
 
 function detectBrowser() {    
-    if((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1 ) {
+    if((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1 ) { 
         return 'Opera';
     } else if(navigator.userAgent.indexOf("Chrome") != -1 ) {   
         return 'Chrome'; 
