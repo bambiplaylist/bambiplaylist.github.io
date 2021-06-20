@@ -138,13 +138,11 @@ var decodeEntities = (function() {
 function allowDrop(ev) {
     ev.preventDefault();
     draggedOver = decodeEntities(ev.target.innerHTML.split("href=\"")[1].split("\">")[0]);
-    console.log(draggedOver+" do");
     audios = [];
 }
 
 const setDragging = (e) =>{
   dragging =  decodeEntities(e.target.innerHTML.split("href=\"")[1].split("\">")[0]);
-    console.log(dragging+" d");
   audios = [];
 }
 
