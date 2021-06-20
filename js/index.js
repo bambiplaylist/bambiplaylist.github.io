@@ -3,7 +3,7 @@ let names = ["00 Rapid Induction", "01 Bubble Induction", "02 Bubble Acceptance"
 let list = document.getElementsByTagName("input");
 let active = [""];
 
-let orderer = document.getElementById("order");
+let orderer = document.getElementById("order"); 
 
 function detectBrowser() { 
     if((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1 ) {
