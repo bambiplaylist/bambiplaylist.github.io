@@ -33,13 +33,21 @@ body {
 }
 
 li {
-   display: block;
-   float: left;
-   text-align: center;
    color: #ffffff;
    background-color: #4f4f4f;
    padding: 10px;
    transition-duration: 0.4s;
+}
+
+li.s {
+   
+   color: #ffffff;
+   background-color: #4f4f4f;
+   padding: 10px;
+   transition-duration: 0.4s;
+   display: block;
+   float: left;
+   text-align: center;
 }
 
 li:hover {
