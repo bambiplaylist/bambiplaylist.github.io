@@ -80,7 +80,7 @@ window.onload = () => {
     document.getElementById("permLink").innerText = window.location.href.split('io/')[0]+"io/perma.html?list="+indexes.join(",");
     document.getElementById("permLink").href = window.location.href.split('io/')[0]+"io/perma.html?list="+indexes.join(",");
     document.getElementById("nfils").innerText = indexes.length;
-    setTimeout(auDur,2000);
+    setTimeout(auDur,5000);
     
   }
 };
