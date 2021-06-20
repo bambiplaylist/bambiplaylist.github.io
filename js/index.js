@@ -73,6 +73,7 @@ let inputHandle = (e) => {
     }   
   }  
   renderItems(active)
+    create();
 } 
  
 var list2 = document.getElementById('order') 
