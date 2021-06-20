@@ -9,7 +9,7 @@ function auDur() {
     audur = 0; 
     for(k=0;k<audios.length;k++){
         audur += audios[k].duration;
-    }
+    } 
     document.getElementById("dur").innerText = jsAudDur(audur);
 }
 
