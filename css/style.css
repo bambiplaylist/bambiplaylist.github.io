@@ -56,7 +56,8 @@ li:hover {
 }
 
 a {
-   color: #ffcffc; !important 
+   color: #ff00ef; !important 
+   text-decoration: underline
 }
 
 .ss {
