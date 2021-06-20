@@ -43,6 +43,7 @@ li.s {
    color: #ffffff;
    background-color: #4f4f4f;
    padding: 10px;
+   overflow: hidden;
    transition-duration: 0.4s;
    display: block;
    float: left;
@@ -80,6 +81,7 @@ ul {
 li.s a {
    display: block;
    text-align: center;
+   overflow: hidden;
    text-decoration: none;
    padding: 2px 16px;
 }
