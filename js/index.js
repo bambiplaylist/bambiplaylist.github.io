@@ -205,24 +205,24 @@ function onended(evt) {
 }
 
 document.getElementById("play").onclick = () => {
-  if(detectBrowser()=="Firefox"||(/Android|webOS|iPhone|iPad|Mac|Macintosh|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))){
+//   if(detectBrowser()=="Firefox"||(/Android|webOS|iPhone|iPad|Mac|Macintosh|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))){
       try{confile.play();}catch(e){}
-  }
-  else {
-  try{audios[currentIndex].play();}catch(e){}
+//   }
+//   else {
+//   try{audios[currentIndex].play();}catch(e){}
     
-  }
+//   }
 };
                     
 document.getElementById("stop").onclick = () => {
-  if(detectBrowser()=="Firefox"||(/Android|webOS|iPhone|iPad|Mac|Macintosh|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))){
+//   if(detectBrowser()=="Firefox"||(/Android|webOS|iPhone|iPad|Mac|Macintosh|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))){
     try{confile.pause();}catch(e){}
-  }
-  else {
-    try{for(i=0;i<audios.length;i++){
-      audios[i].pause();
-    }}catch(e){}
-  }
+//   }
+//   else {
+//     try{for(i=0;i<audios.length;i++){
+//       audios[i].pause();
+//     }}catch(e){}
+//   }
 };
 
 /*
