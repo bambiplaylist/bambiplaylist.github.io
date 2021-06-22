@@ -83,7 +83,6 @@ window.onload = () => {
     document.getElementById("permLink").innerText = window.location.href.split('io/')[0]+"io/perma.html?list="+indexes.join(",");
     document.getElementById("permLink").href = window.location.href.split('io/')[0]+"io/perma.html?list="+indexes.join(",");
     document.getElementById("nfils").innerText = indexes.length;
-    setTimeout(auDur,5000);
     let loaded = 1;
     proms = uris.map(uri => fetch(uri).then((r) => {alertBox("Loaded file "+loaded);loaded++;return r.blob()}));
     Promise.all(proms).then(blobs => {
@@ -94,6 +93,7 @@ window.onload = () => {
         confile = new Audio(blobUrl);
         alertBox("Loaded entire playlist!");
         loded = true;
+        auDur();
     });
   }
 };
