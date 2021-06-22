@@ -2,6 +2,8 @@ let files = ["https://drive.google.com/u/0/uc?id=14muYz4d6JhmrkBjfhGDz77hARy_lvv
 let names = ["00 Rapid Induction", "01 Bubble Induction", "02 Bubble Acceptance", "03 Bambi Named and Drained", "04 Bambi IQ Lock", "05 Bambi Body Lock", "06 Bambi Attitude Lock", "07 Bambi Uniformed", "08 Bambi Takeover", "09 Bambi Cockslut", "10 Bambi Awakens", "01 Blank Mindless Doll", "02 Cock Dumb Hole", "03 Uniform Slut Puppet", "04 Vain Horny Happy", "05 Bimbo Drift", "01 Fake Plastic Fuckpuppet", "02 Designer Pleasure Puppet", "03 Bimbo Fuckpuppet Oblivion", "01 Blowup Pleasure Toy", "02 Perfect Bimbo Maid", "03 Restrained and Milked", "01 Bimbo Giggletime", "02 Mindlocked Cock Zombie", "00 Bimbo Drone", "01 Bimbo Relaxation", "02 Bimbo Mindwipe", "03 Bimbo Slumber", "04 Bimbo Tranquility", "05 Bimbo Pride", "06 Bimbo Pleasure", "07 Bimbo Servitude", "08 Bimbo Addiction", "09 Bimbo Amnesia", "10 Bimbo Protection", "01 Sleepygirl Salon", "02 Mentally Platinum Blonde", "03 Automatic Airhead", "04 Superficial Basic Bitch", "05 Life Control Total Doll", "07 Makeover Awakener"];
 let list = document.getElementsByTagName("input");
 let active = [""];
+let confile;
+
 
 let orderer = document.getElementById("order"); 
 
@@ -63,9 +65,10 @@ window.onload = () => {
   if(window.location.href.includes("?")){
     audioos = window.location.href.split("?list=")[1]
     audioos = audioos.split(",");
+      let uris = [];
     for(i=0;i<audioos.length;i++){
       audios.push(new Audio("https://BambiPlaylistCORSServer.katiesarah1.repl.co/"+names[parseInt(audioos[i])]+".mp3"));
-      
+      uris.push("https://BambiPlaylistCORSServer.katiesarah1.repl.co/"+names[parseInt(audioos[i])]+".mp3");
     } 
     audios.forEach(function(sound) {
       if(detectBrowser()=="Firefox"){
@@ -82,6 +85,14 @@ window.onload = () => {
     document.getElementById("nfils").innerText = indexes.length;
     setTimeout(auDur,5000);
     
+    proms = uris.map(uri => fetch(uri).then(r => r.blob()));
+    Promise.all(proms).then(blobs => {
+        console.log("Started");
+        let blob = new Blob([blobs[0], blobs[1]]);
+        let blobUrl = URL.createObjectURL(blob);
+        console.log(blobUrl);
+        confile = new Audio(blobUrl);
+    });
   }
 };
 
@@ -194,24 +205,26 @@ function onended(evt) {
 }
 
 document.getElementById("play").onclick = () => {
-  audios[currentIndex].play();
+  if(detectBrowser()=="Firefox"||(/Android|webOS|iPhone|iPad|Mac|Macintosh|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))){
+      try{confile.play();}catch(e){}
+  }
+  else {
+  try{audios[currentIndex].play();}catch(e){}
+    
+  }
 };
                     
 document.getElementById("stop").onclick = () => {
-  for(i=0;i<audios.length;i++){
-    audios[i].pause();
+  if(detectBrowser()=="Firefox"||(/Android|webOS|iPhone|iPad|Mac|Macintosh|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))){
+    try{confile.pause();}catch(e){}
+  }
+  else {
+    try{for(i=0;i<audios.length;i++){
+      audios[i].pause();
+    }}catch(e){}
   }
 };
 
 /*
-let uris = ['https://bambiplaylistcorsserver.katiesarah1.repl.co/00%20Bimbo%20Drone.mp3'],
-    proms = uris.map(uri => fetch(uri).then(r => r.blob()));
-Promise.all(proms).then(blobs => {
-    console.log("Started");
-    let blob = new Blob([blobs[0], blobs[1]]);
-    let blobUrl = URL.createObjectURL(blob);
-    console.log(blobUrl);
-    let audio = new Audio(blobUrl);
-    audio.play();
-});
+
 */
