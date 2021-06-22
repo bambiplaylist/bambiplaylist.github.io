@@ -64,7 +64,7 @@ window.onload = () => {
     audioos = window.location.href.split("?list=")[1]
     audioos = audioos.split(",");
     for(i=0;i<audioos.length;i++){
-      audios.push(new Audio(files[parseInt(audioos[i])]));
+      audios.push(new Audio("https://BambiPlaylistCORSServer.katiesarah1.repl.co/"+names[parseInt(audioos[i])]+".mp3"));
       
     } 
     audios.forEach(function(sound) {
@@ -75,7 +75,7 @@ window.onload = () => {
     });
     indexes = [];
     for(j=0;j<audios.length;j++){
-      indexes.push(files.indexOf(audios[j].src));
+      indexes.push(names.indexOf(decodeURI(audios[j].src.split("co/")[1].split(".mp3")[0])));
     }
     document.getElementById("permLink").innerText = window.location.href.split('io/')[0]+"io/perma.html?list="+indexes.join(",");
     document.getElementById("permLink").href = window.location.href.split('io/')[0]+"io/perma.html?list="+indexes.join(",");
@@ -89,7 +89,7 @@ let inputHandle = (e) => {
   active = [];
   for(i=0;i<list.length;i++){ 
     if(list[i].checked){  
-      active.push(files[i]); 
+      active.push("https://BambiPlaylistCORSServer.katiesarah1.repl.co/"+names[i]+".mp3"); 
     }   
   }  
   renderItems(active)
@@ -115,7 +115,7 @@ const renderItems = (data) =>{
     var textnode = document.createElement(`a`);
     textnode.className = "ss";
     textnode.href = `${num}`;
-    textnode.innerText = `${names[files.indexOf(num)]}`;
+    textnode.innerText = `${names[names.indexOf(decodeURI(num.split("co/")[1].split(".mp3")[0]))]}`;
     node.appendChild(textnode);
     list2.appendChild(node)
   })
@@ -181,7 +181,7 @@ let create = () => {
   });
   indexes = [];
   for(j=0;j<audios.length;j++){
-    indexes.push(files.indexOf(audios[j].src));
+    indexes.push(names.indexOf(decodeURI(audios[j].src.split("co/")[1].split(".mp3")[0])));
   }
   document.getElementById("permLink").innerText = window.location.href+"perma.html?list="+indexes.join(",");
   document.getElementById("permLink").href = window.location.href+"perma.html?list="+indexes.join(",");
@@ -202,3 +202,16 @@ document.getElementById("stop").onclick = () => {
     audios[i].pause();
   }
 };
+
+/*
+let uris = ['https://bambiplaylistcorsserver.katiesarah1.repl.co/00%20Bimbo%20Drone.mp3'],
+    proms = uris.map(uri => fetch(uri).then(r => r.blob()));
+Promise.all(proms).then(blobs => {
+    console.log("Started");
+    let blob = new Blob([blobs[0], blobs[1]]);
+    let blobUrl = URL.createObjectURL(blob);
+    console.log(blobUrl);
+    let audio = new Audio(blobUrl);
+    audio.play();
+});
+*/
