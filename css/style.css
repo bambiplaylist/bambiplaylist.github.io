@@ -27,6 +27,20 @@
 .closebtn:hover {
     color: black;
 }
+
+.closebtn {
+    margin-left: 15px;
+    /* position: absolute; */
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    pointer-events: all !important;
+}
+
 body {
    background-color: #85007c;
    color: #f1dbff;    
