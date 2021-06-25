@@ -3,6 +3,7 @@ let list = document.getElementsByTagName("input");
 let active = [""];
 let confile;
 
+let legacy = false;
 
 let orderer = document.getElementById("order"); 
 
@@ -61,6 +62,7 @@ function jsAudDur(audc) {
 }
 let loded = false;
 window.onload = () => { 
+  legacy = confirm("Would you like to use the faster, less reliable (may not work for some browsers) loading? (ok for yes, cancel for no)");
   if(window.location.href.includes("?")){
     audioos = window.location.href.split("?list=")[1]
     audioos = audioos.split(",");
@@ -206,29 +208,30 @@ function onended(evt) {
 }
 
 document.getElementById("play").onclick = () => {
-//   if(detectBrowser()=="Firefox"||(/Android|webOS|iPhone|iPad|Mac|Macintosh|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))){
+  if(!legacy){
      if(loded){
          try{confile.play();}catch(e){}
      }
+      else if(legacy) {
+  try{audios[currentIndex].play();}catch(e){}
+    
+  }
     else {
         alertBox("Not all files loaded! Please wait!");
     }
-//   }
-//   else {
-//   try{audios[currentIndex].play();}catch(e){}
-    
-//   }
+  }
+  
 };
                     
 document.getElementById("stop").onclick = () => {
-//   if(detectBrowser()=="Firefox"||(/Android|webOS|iPhone|iPad|Mac|Macintosh|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))){
+  if(!legacy){
     try{confile.pause();}catch(e){}
-//   }
-//   else {
-//     try{for(i=0;i<audios.length;i++){
-//       audios[i].pause();
-//     }}catch(e){}
-//   }
+  }
+  else {
+    try{for(i=0;i<audios.length;i++){
+      audios[i].pause();
+    }}catch(e){}
+  }
 };
 
 /*
