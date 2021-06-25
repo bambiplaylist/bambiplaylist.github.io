@@ -62,7 +62,7 @@ function jsAudDur(audc) {
 }
 let loded = false;
 window.onload = () => { 
-  legacy = confirm("Would you like to use the faster, less reliable (may not work for some browsers) loading? (ok for yes, cancel for no)");
+//   legacy = confirm("Would you like to use the faster, less reliable (may not work for some browsers) loading? (ok for yes, cancel for no)");
   if(window.location.href.includes("?")){
     audioos = window.location.href.split("?list=")[1]
     audioos = audioos.split(",");
@@ -208,30 +208,32 @@ function onended(evt) {
 }
 
 document.getElementById("play").onclick = () => {
-  if(!legacy){
+//   if(!legacy){
      if(loded){
          try{confile.play();}catch(e){}
-     }
-      else if(legacy) {
-  try{audios[currentIndex].play();}catch(e){}
-    
-  }
-    else {
+     }else {
         alertBox("Not all files loaded! Please wait!");
     }
-  }
+//       else if(legacy) {
+//   try{audios[currentIndex].play();}catch(e){}
+    
+//   }
+//     else {
+//         alertBox("Not all files loaded! Please wait!");
+//     }
+//   }
   
 };
                     
 document.getElementById("stop").onclick = () => {
-  if(!legacy){
+//   if(!legacy){
     try{confile.pause();}catch(e){}
-  }
-  else {
-    try{for(i=0;i<audios.length;i++){
-      audios[i].pause();
-    }}catch(e){}
-  }
+//   }
+//   else {
+//     try{for(i=0;i<audios.length;i++){
+//       audios[i].pause();
+//     }}catch(e){}
+//   }
 };
 
 /*
