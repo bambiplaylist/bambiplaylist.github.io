@@ -52,11 +52,7 @@ function alertBox(msg) {
         }, 600);
     }, 3000, zz);
 }
-function blobToDataURL(blob, callback) {
-    var a = new FileReader();
-    a.onload = function(e) {callback(e.target.result);}
-    a.readAsDataURL(blob);
-}
+
 function jsAudDur(audc) {
     hours = "0" + Math.floor((audc / 60)/60);
     minutes = "0" + (Math.floor(audc / 60) - (60 * Math.floor((audc / 60)/60)));
@@ -95,10 +91,6 @@ window.onload = () => {
         let blob = new Blob(blobs);
         let blobUrl = URL.createObjectURL(blob);
         console.log(blobUrl);
-        blobToDataURL(blob, (e)=>{
-            document.getElementById("audio_download").href=e;
-            document.getElementById("audio_download").textContent = "*EXPERIMENTAL* audio download : output.mp3";
-        })
         confile = new Audio(blobUrl);
         alertBox("Loaded entire playlist!");
         loded = true;
