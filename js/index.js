@@ -88,7 +88,7 @@ window.onload = () => {
     proms = uris.map(uri => fetch(uri).then((r) => {alertBox("Started loading file #"+loaded);loaded++;return r.blob()}));
     Promise.all(proms).then(blobs => {
         console.log("Started");
-        let blob = new Blob([blobs[0], blobs[1]]);
+        let blob = new Blob(blobs);
         let blobUrl = URL.createObjectURL(blob);
         console.log(blobUrl);
         confile = new Audio(blobUrl);
