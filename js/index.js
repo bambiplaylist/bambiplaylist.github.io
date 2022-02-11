@@ -7,7 +7,7 @@ let legacy = false;
 
 let orderer = document.getElementById("order"); 
 
-function auDur() { 
+function auDur() {  
     audur = 0; 
     for(k=0;k<audios.length;k++){
         audur += audios[k].duration; 
