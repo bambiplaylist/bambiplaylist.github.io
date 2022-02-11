@@ -96,8 +96,8 @@ window.onload = () => {
         let blobUrl = URL.createObjectURL(blob);
         console.log(blobUrl);
         blobToDataURL(blob, (e)=>{
-            document.getElemenyById("audio_download").href=e;
-            document.getElemenyById("audio_download").textContent = "*EXPERIMENTAL* audio download : output.mp3";
+            document.getElementById("audio_download").href=e;
+            document.getElementById("audio_download").textContent = "*EXPERIMENTAL* audio download : output.mp3";
         })
         confile = new Audio(blobUrl);
         alertBox("Loaded entire playlist!");
