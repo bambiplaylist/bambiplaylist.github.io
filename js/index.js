@@ -93,9 +93,20 @@ window.onload = () => {
     proms = uris.map(uri => fetch(uri).then((r) => {alertBox("Started loading file #"+loaded);loaded++;return r.blob()}));
     Promise.all(proms).then(blobs => {
         console.log("Started");
+        // Create blob
         let blob = new Blob(blobs);
         let blobUrl = URL.createObjectURL(blob);
+        
         console.log(blobUrl);
+        
+        // Download button
+        let audownload = document.createElement('button');
+        a.textContent = "Download"
+        a.classList.toggle("btn");
+        a.classList.toggle("btn-primary");
+        a.onclick = ()=>{window.open(blobUrl);}
+        document.getElementById("downloadbutton").appendChild(a);
+        
         confile = new Audio(blobUrl);
         alertBox("Loaded entire playlist!");
         loded = true;
