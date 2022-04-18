@@ -101,11 +101,11 @@ window.onload = () => {
         
         // Download button
         let audownload = document.createElement('button');
-        a.textContent = "Download"
-        a.classList.toggle("btn");
-        a.classList.toggle("btn-primary");
-        a.onclick = ()=>{window.open(blobUrl);}
-        document.getElementById("downloadbutton").appendChild(a);
+        audownload.textContent = "Download"
+        audownload.classList.toggle("btn");
+        audownload.classList.toggle("btn-primary");
+        audownload.onclick = ()=>{window.open(blobUrl);}
+        document.getElementById("downloadbutton").appendChild(audownload);
         
         confile = new Audio(blobUrl);
         alertBox("Loaded entire playlist!");
