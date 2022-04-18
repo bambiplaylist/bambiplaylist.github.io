@@ -3,6 +3,11 @@ let list = document.getElementsByTagName("input");
 let active = [""];
 let confile;
 
+if (window.location.href.split("io/")[1].split("?")[0] == "perma.html") {
+    alertBox("This project is supported by ads, feel free to support the site by turning off your ad blocker.");
+    alertBox("If you do not wish to have ads, check out <a href='https://ublockorigin.com/'>U-Block origin</a> (it's a good ad blocker)");
+}
+
 let legacy = false;
 
 let orderer = document.getElementById("order"); 
