@@ -47,7 +47,6 @@
 
 .closebtn {
    margin-left: 15px;
-   /* position: absolute; */
    color: white;
    font-weight: bold;
    float: right;
@@ -87,8 +86,8 @@ li:hover {
 }
 
 a {
-   color: #ff00ef;
-    !important text-decoration: underline
+   color: #ff00ef !important;
+   text-decoration: underline
 }
 
 .ss {
