@@ -15,11 +15,14 @@ self.addEventListener("install", (event) => {
 	);
 });
 
-self.addEventListener('fetch', (event) => {
-	const responseFromCache = caches.match(request);
+const cacheFirst = async (request) => {
+	const responseFromCache = await caches.match(request);
 	if (responseFromCache) {
 		return responseFromCache;
-	} else {
-		return fetch(request)
 	}
+	return fetch(request);
+};
+
+self.addEventListener('fetch', (event) => {
+	event.respondWith(cacheFirst(event.request));
 });

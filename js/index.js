@@ -82,16 +82,15 @@ function jsAudDur(audc) {
 	dur = hours.substr(-2) + ":" + minutes.substr(-2) + ":" + seconds.substr(-2);
 	return dur;
 }
+registerServiceWorker();
+
+if (window.location.href.split("io/")[1].split("?")[0] == "perma.html") {
+	alertBox("This project is supported by ads, feel free to support the site by turning off your ad blocker.");
+	alertBox("If you do not wish to have ads, check out <a class='alertLink' href='https://ublockorigin.com/'>U-Block origin</a> (it's a good ad blocker)");
+}
+
 let loded = false;
 window.onload = () => {
-	registerServiceWorker();
-
-	if (window.location.href.split("io/")[1].split("?")[0] == "perma.html") {
-		alertBox("This project is supported by ads, feel free to support the site by turning off your ad blocker.");
-		alertBox("If you do not wish to have ads, check out <a class='alertLink' href='https://ublockorigin.com/'>U-Block origin</a> (it's a good ad blocker)");
-	}
-	
-	
 	if (window.location.href.includes("?")) {
 		audioos = window.location.href.split("?list=")[1]
 		audioos = audioos.split(",");
