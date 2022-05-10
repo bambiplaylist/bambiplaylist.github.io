@@ -20,7 +20,6 @@
 #alertBoxs {
     z-index: 99 !important;
     position: absolute;
-    pointer-events: none;
 }
 
 .closebtn:hover {
