@@ -16,7 +16,7 @@ self.addEventListener("install", (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-	const responseFromCache = await caches.match(request);
+	const responseFromCache = caches.match(request);
 	if (responseFromCache) {
 		return responseFromCache;
 	} else {
