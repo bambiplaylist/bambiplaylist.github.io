@@ -4,10 +4,26 @@ let active = [""];
 let confile;
 let progInterval
 
-if (window.location.href.split("io/")[1].split("?")[0] == "perma.html") {
-	alertBox("This project is supported by ads, feel free to support the site by turning off your ad blocker.");
-	alertBox("If you do not wish to have ads, check out <a class='alertLink' href='https://ublockorigin.com/'>U-Block origin</a> (it's a good ad blocker)");
-}
+const registerServiceWorker = async () => {
+	if ('serviceWorker' in navigator) {
+		try {
+			const registration = await navigator.serviceWorker.register(
+				'/sw.js', {
+					scope: '/',
+				}
+			);
+			if (registration.installing) {
+				console.log('Service worker installing');
+			} else if (registration.waiting) {
+				console.log('Service worker installed');
+			} else if (registration.active) {
+				console.log('Service worker active');
+			}
+		} catch (error) {
+			console.error(`Registration failed with ${error}`);
+		}
+	}
+};
 
 let legacy = false;
 
@@ -68,7 +84,14 @@ function jsAudDur(audc) {
 }
 let loded = false;
 window.onload = () => {
-	//   legacy = confirm("Would you like to use the faster, less reliable (may not work for some browsers) loading? (ok for yes, cancel for no)");
+	registerServiceWorker();
+
+	if (window.location.href.split("io/")[1].split("?")[0] == "perma.html") {
+		alertBox("This project is supported by ads, feel free to support the site by turning off your ad blocker.");
+		alertBox("If you do not wish to have ads, check out <a class='alertLink' href='https://ublockorigin.com/'>U-Block origin</a> (it's a good ad blocker)");
+	}
+	
+	
 	if (window.location.href.includes("?")) {
 		audioos = window.location.href.split("?list=")[1]
 		audioos = audioos.split(",");
