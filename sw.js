@@ -23,6 +23,6 @@ const cacheFirst = async (request) => {
 	return fetch(request);
 };
 
-self.addEventListener('fetch', (event) => {
-	event.respondWith(cacheFirst(event.request));
-});
+// self.addEventListener('fetch', (event) => {
+// 	event.respondWith(cacheFirst(event.request));
+// });
