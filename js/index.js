@@ -121,7 +121,7 @@ window.onload = () => {
 		Promise.all(proms).then(blobs => {
 			console.log("Started");
 			// Create blob
-			let blob = new Blob(blobs);
+			let blob = new Blob(blobs, { type: 'audio/mpeg' });
 			let blobUrl = URL.createObjectURL(blob);
 
 			console.log(blobUrl);
