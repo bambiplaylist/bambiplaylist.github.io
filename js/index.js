@@ -133,7 +133,7 @@ window.onload = () => {
 					audur += audios[k].duration;
 				}
 				duration = jsAudDur(audur)
-				list_item.innerText = names[parseInt(audioos[i])]+" - "+" - "+audioos[i];
+				list_item.innerText = names[parseInt(audioos[i])]+" - "+duration+" - "+audioos[i];
 
 				list_element.appendChild(list_item)
 			}
