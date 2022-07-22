@@ -60,6 +60,7 @@
 body {
    background-color: #30002d;
    color: #f1dbff;
+   font-size: 20px;
 }
 
 li:not(.s) {
