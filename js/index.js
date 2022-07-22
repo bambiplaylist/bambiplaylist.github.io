@@ -94,8 +94,13 @@ window.onload = () => {
 	if (window.location.href.includes("?")) {
 		audioos = window.location.href.split("?list=")[1]
 		audioos = audioos.split(",");
+		
+		list_element = document.querySelector("#list")
+		
 		let uris = [];
 		for (i = 0; i < audioos.length; i++) {
+			
+			
 			audios.push(new Audio("https://BambiPlaylistCORSServer.katiesarah1.repl.co/" + names[parseInt(audioos[i])] + ".mp3"));
 			uris.push("https://BambiPlaylistCORSServer.katiesarah1.repl.co/" + names[parseInt(audioos[i])] + ".mp3");
 		}
@@ -120,6 +125,19 @@ window.onload = () => {
 		}));
 		Promise.all(proms).then(blobs => {
 			console.log("Started");
+			
+			for (i = 0; i < audioos.length; i++) {
+				list_item = document.createElement("p");
+				audur = 0;
+				for (k = 0; k < audios.length; k++) {
+					audur += audios[k].duration;
+				}
+				duration = jsAudDur(audur)
+				list_item.innerText = names[parseInt(audioos[i])]+" - "+" - "+audioos[i];
+
+				list_element.appendChild(list_item)
+			}
+			
 			// Create blob
 			let blob = new Blob(blobs, { type: 'audio/mpeg' });
 			let blobUrl = URL.createObjectURL(blob);
