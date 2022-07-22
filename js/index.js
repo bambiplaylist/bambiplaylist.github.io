@@ -128,10 +128,7 @@ window.onload = () => {
 			
 			for (i = 0; i < audioos.length; i++) {
 				list_item = document.createElement("p");
-				audur = 0;
-				for (k = 0; k < audios.length; k++) {
-					audur += audios[k].duration;
-				}
+				audur = audios[i].duration;
 				duration = jsAudDur(audur)
 				list_item.innerText = names[parseInt(audioos[i])]+" - "+duration+" - "+audioos[i];
 
