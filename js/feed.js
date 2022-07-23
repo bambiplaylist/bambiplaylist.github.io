@@ -73,6 +73,10 @@ function createFeedItem(name, user, link, id) {
 	document.querySelector('#feed').appendChild(feed_item)
 }
 
+function like(button) {
+	fetch("https://BambiPlaylistCORSServer.katiesarah1.repl.co/like", {method: 'POST', headers: {'Content-Type': "application/x-www-form-urlencoded"}, body: `id=${button.id}`})
+}
+
 registerServiceWorker();
 
 window.onload = () => {}
