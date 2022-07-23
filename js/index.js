@@ -4,7 +4,9 @@ let active = [""];
 let confile;
 let progInterval
 
-function postFeed(name, user) {
+function postFeed() {
+	name = document.querySelector("#feed-name").value;
+	user = document.querySelector("#feed-username").value;
 	fetch("https://BambiPlaylistCORSServer.katiesarah1.repl.co/new", {method: 'POST', 
 headers: {'Content-Type': "application/x-www-form-urlencoded"}, body: `name=${name}&user=${user}&link=${window.location.href}`})
 }
