@@ -52,8 +52,12 @@
               <div class="prog-inner"></div>
             </div>
             <br>
-            <input type="text" id="feed-username" placeholder="username"><br>
-            <input type="text" id="feed-name" placeholder="playlist name"><br>
+            <p>Post your playlist!</p>
+            <br>
+            <label for="feed-username">Username</label>
+            <input type="text" id="feed-username" class="form-control" placeholder="username">
+            <label for="feed-name">Playlist name</label>
+            <input type="text" id="feed-name" class="form-control" placeholder="playlist name">
             <button id="post" onclick="postFeed()" class="btn btn-primary">Post</button>
             <hr />
           </form>
