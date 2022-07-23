@@ -57,6 +57,22 @@ function alertBox(msg) {
 	}, 3000, zz);
 }
 
+function createFeedItem(name, user, link, id) {
+	feed_item = document.createElement('div')
+	feed_item.className = "feed-item"
+	feed_item.innerHTML = 
+	`<h4></h4>
+    <p><a href=""></a></p>
+    <button id="" onclick="like(this)" class="btn btn-primary">like</button><br>`
+
+	feed_item.children[0].textContent = `${name} - ${user}`
+	feed_item.children[1].children[0].href = link
+	feed_item.children[1].children[0].textContent = link
+	feed_item.children[2].id = id
+	
+	document.querySelector('#feed').appendChild(feed_item)
+}
+
 registerServiceWorker();
 
 window.onload = () => {}
