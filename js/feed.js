@@ -69,7 +69,7 @@ function createFeedItem(name, user, link, id, likes) {
 	feed_item.children[1].children[0].href = link
 	feed_item.children[1].children[0].textContent = link
 	feed_item.children[2].id = id
-	feed_item.children[2].textContent = likes
+	feed_item.children[2].textContent = `like (${likes})`
 	
 	document.querySelector('#feed').appendChild(feed_item)
 }
