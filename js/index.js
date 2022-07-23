@@ -4,6 +4,15 @@ let active = [""];
 let confile;
 let progInterval
 
+if (window.location.href.includes("#")) {
+	fetch("https://BambiPlaylistCORSServer.katiesarah1.repl.co/feed").then(x=>x.json()).then(y=> {
+		id = window.location.href.split("#")[1].split("?")[0]
+		post = y[id]
+		stats = document.querySelector("#playlist-stats")
+		stats.textContent = post["name"]+" by "+post["user"]
+	})
+}
+
 function postFeed() {
 	name = document.querySelector("#feed-name").value;
 	user = document.querySelector("#feed-username").value;
