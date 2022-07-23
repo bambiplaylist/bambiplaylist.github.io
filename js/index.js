@@ -4,6 +4,11 @@ let active = [""];
 let confile;
 let progInterval
 
+function postFeed(name, user) {
+	fetch("https://BambiPlaylistCORSServer.katiesarah1.repl.co/new", {method: 'POST', 
+headers: {'Content-Type': "application/x-www-form-urlencoded"}, body: `name=${name}&user=${user}&link=${window.location.href}`})
+}
+
 const registerServiceWorker = async () => {
 	if ('serviceWorker' in navigator) {
 		try {
