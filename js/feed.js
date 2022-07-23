@@ -82,7 +82,7 @@ registerServiceWorker();
 
 function renderFeed() {
 	fetch("https://BambiPlaylistCORSServer.katiesarah1.repl.co/feed").then(x=>x.json()).then(a=> {
-		Object.keys(a).forEach((e) => {createFeedItem(a[e]["name"], a[e]["user"], "https://bambiplaylist.github.io/perma.html#"+e, e, a[e]["likes"])})
+		Object.keys(a).forEach((e) => {createFeedItem(a[e]["name"], a[e]["user"], "https://bambiplaylist.github.io/perma.html#"+e+"?"+a[e]["link"].split("?")[1], e, a[e]["likes"])})
 	})
 }
 
