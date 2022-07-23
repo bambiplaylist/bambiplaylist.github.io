@@ -82,7 +82,14 @@ registerServiceWorker();
 
 function renderFeed() {
 	fetch("https://BambiPlaylistCORSServer.katiesarah1.repl.co/feed").then(x=>x.json()).then(a=> {
-		Object.keys(a).forEach((e) => {createFeedItem(a[e]["name"], a[e]["user"], a[e]["link"], e, a[e]["likes"])})
+		Object.keys(a).forEach((e) => {createFeedItem(a[e]["name"], a[e]["user"], "https://bambiplaylist.github.io/feed.html#"+e, e, a[e]["likes"])})
+	})
+}
+
+if (window.location.href.includes("#")) {
+	fetch("https://BambiPlaylistCORSServer.katiesarah1.repl.co/feed").then(x=>x.json()).then(y=> {
+		id = window.location.href.split("#")[1]
+		window.location = y[id]["link"]+"#"+id
 	})
 }
 
