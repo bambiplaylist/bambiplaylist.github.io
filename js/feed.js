@@ -80,4 +80,12 @@ function like(button) {
 
 registerServiceWorker();
 
-window.onload = () => {}
+function renderFeed() {
+	fetch("https://BambiPlaylistCORSServer.katiesarah1.repl.co/feed").then(x=>x.json()).then(a=> {
+		Object.keys(a).forEach((e) => {createFeedItem(a[e]["name"], a[e]["user"], a[e]["link"], e, a[e]["likes"])})
+	})
+}
+
+window.onload = () => {
+	renderFeed()
+}
