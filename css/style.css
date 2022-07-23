@@ -6,6 +6,13 @@
    text-align: center;
 }
 
+.feed-item {
+  background-color: #5c0546;
+  padding: 10px;
+  border: 3px solid pink;
+  border-radius: 10px;
+}
+
 .alert {
    /* position: absolute; */
    padding: 20px;
