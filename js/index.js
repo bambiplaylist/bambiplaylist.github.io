@@ -289,7 +289,7 @@ document.getElementById("play").onclick = () => {
 	
 	if (loded) {
 		try {
-			let counter = document.querySelector("#loops");
+			let counter = parseInt(document.querySelector("#loops").value);
 
 			const customPlay = function() {      
 			  confile.play();
