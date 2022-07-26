@@ -295,7 +295,7 @@ document.getElementById("play").onclick = () => {
 			  confile.play();
 			  counter--;
 
-			  if (counter === 0) {
+			  if (counter <= 0) {
 				confile.removeEventListener('ended', customPlay);
 			  }
 			};
