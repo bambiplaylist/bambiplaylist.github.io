@@ -286,9 +286,26 @@ function onended(evt) {
 }
 
 document.getElementById("play").onclick = () => {
+	
 	if (loded) {
 		try {
-			confile.play();
+			let counter = document.querySelector("#loops");
+
+			const customPlay = function() {      
+			  confile.play();
+			  counter--;
+
+			  if (counter === 0) {
+				confile.removeEventListener('ended', customPlay);
+			  }
+			};
+
+			confile.addEventListener('ended', customPlay);
+
+			confile.currentTime = 0;
+			confile.loop = false;    
+			customPlay();
+			
 			progInterval = setInterval(() => {
 				document.querySelector(".prog-inner").style.width = ((confile.currentTime / confile.duration) * 100).toFixed(1).toString() + "%"
 			}, 100)
