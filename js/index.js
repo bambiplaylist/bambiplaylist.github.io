@@ -5,7 +5,7 @@ let confile;
 let progInterval
 
 if (window.location.href.includes("#")) {
-	fetch("https://BambiPlaylistCORSServer.katiesarah1.repl.co/feed").then(x=>x.json()).then(y=> {
+	fetch("https://170-187-241-183.ip.linodeusercontent.com/feed").then(x=>x.json()).then(y=> {
 		id = window.location.href.split("#")[1].split("?")[0]
 		post = y[id]
 		stats = document.querySelector("#playlist-stats")
@@ -16,7 +16,7 @@ if (window.location.href.includes("#")) {
 function postFeed() {
 	name = document.querySelector("#feed-name").value;
 	user = document.querySelector("#feed-username").value;
-	fetch("https://BambiPlaylistCORSServer.katiesarah1.repl.co/new", {method: 'POST', 
+	fetch("https://170-187-241-183.ip.linodeusercontent.com/new", {method: 'POST', 
 headers: {'Content-Type': "application/x-www-form-urlencoded"}, body: `name=${name}&user=${user}&link=${window.location.href}`}).then(() => {
 	alertBox("Posted playlist!");
 })
@@ -119,8 +119,8 @@ window.onload = () => {
 		for (i = 0; i < audioos.length; i++) {
 			
 			
-			audios.push(new Audio("https://BambiPlaylistCORSServer.katiesarah1.repl.co/" + names[parseInt(audioos[i])] + ".mp3"));
-			uris.push("https://BambiPlaylistCORSServer.katiesarah1.repl.co/" + names[parseInt(audioos[i])] + ".mp3");
+			audios.push(new Audio("https://170-187-241-183.ip.linodeusercontent.com/" + names[parseInt(audioos[i])] + ".mp3"));
+			uris.push("https://170-187-241-183.ip.linodeusercontent.com/" + names[parseInt(audioos[i])] + ".mp3");
 		}
 		audios.forEach(function (sound) {
 			if (detectBrowser() == "Firefox") {
@@ -181,7 +181,7 @@ let inputHandle = (e) => {
 	active = [];
 	for (i = 0; i < list.length; i++) {
 		if (list[i].checked) {
-			active.push("https://BambiPlaylistCORSServer.katiesarah1.repl.co/" + names[i] + ".mp3");
+			active.push("https://170-187-241-183.ip.linodeusercontent.com/" + names[i] + ".mp3");
 		}
 	}
 	renderItems(active)
