@@ -71,7 +71,7 @@ function createFeedItem(name, user, link, id, likes) {
 	feed_item.children[2].id = id
 	feed_item.children[2].textContent = `like (${likes})`
 	
-	document.querySelector('#feed').appendChild(feed_item)
+	document.querySelector('#feed').prepend(feed_item)
 }
 
 function like(button) {
