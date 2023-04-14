@@ -75,19 +75,19 @@ function createFeedItem(name, user, link, id, likes) {
 }
 
 function like(button) {
-	fetch("https://BambiPlaylistCORSServer.katiesarah1.repl.co/like", {method: 'POST', headers: {'Content-Type': "application/x-www-form-urlencoded"}, body: `id=${button.id}`})
+	fetch("https://170-187-241-183.ip.linodeusercontent.com/like", {method: 'POST', headers: {'Content-Type': "application/x-www-form-urlencoded"}, body: `id=${button.id}`})
 }
 
 registerServiceWorker();
 
 function renderFeed() {
-	fetch("https://BambiPlaylistCORSServer.katiesarah1.repl.co/feed").then(x=>x.json()).then(a=> {
+	fetch("https://170-187-241-183.ip.linodeusercontent.com/feed").then(x=>x.json()).then(a=> {
 		Object.keys(a).forEach((e) => {createFeedItem(a[e]["name"], a[e]["user"], "https://bambiplaylist.github.io/perma.html#"+e+"?"+a[e]["link"].split("?")[1], e, a[e]["likes"])})
 	})
 }
 
 if (window.location.href.includes("#")) {
-	fetch("https://BambiPlaylistCORSServer.katiesarah1.repl.co/feed").then(x=>x.json()).then(y=> {
+	fetch("https://170-187-241-183.ip.linodeusercontent.com/feed").then(x=>x.json()).then(y=> {
 		id = window.location.href.split("#")[1]
 		window.location = y[id]["link"]+"#"+id
 	})
