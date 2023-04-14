@@ -130,7 +130,7 @@ window.onload = () => {
 		});
 		indexes = [];
 		for (j = 0; j < audios.length; j++) {
-			indexes.push(names.indexOf(decodeURI(audios[j].src.split("co/")[1].split(".mp3")[0])));
+			indexes.push(names.indexOf(decodeURI(audios[j].src.split("com/")[1].split(".mp3")[0])));
 		}
 		document.getElementById("permLink").innerText = window.location.href.split('io/')[0] + "io/perma.html?list=" + indexes.join(",");
 		document.getElementById("permLink").href = window.location.href.split('io/')[0] + "io/perma.html?list=" + indexes.join(",");
@@ -207,7 +207,7 @@ const renderItems = (data) => {
 		var textnode = document.createElement(`a`);
 		textnode.className = "ss";
 		textnode.href = `${num}`;
-		textnode.innerText = `${names[names.indexOf(decodeURI(num.split("co/")[1].split(".mp3")[0]))]}`;
+		textnode.innerText = `${names[names.indexOf(decodeURI(num.split("com/")[1].split(".mp3")[0]))]}`;
 		node.appendChild(textnode);
 		list2.appendChild(node)
 	})
@@ -273,7 +273,7 @@ let create = () => {
 	});
 	indexes = [];
 	for (j = 0; j < audios.length; j++) {
-		indexes.push(names.indexOf(decodeURI(audios[j].src.split("co/")[1].split(".mp3")[0])));
+		indexes.push(names.indexOf(decodeURI(audios[j].src.split("com/")[1].split(".mp3")[0])));
 	}
 	document.getElementById("permLink").innerText = window.location.href + "perma.html?list=" + indexes.join(",");
 	document.getElementById("permLink").href = window.location.href + "perma.html?list=" + indexes.join(",");
