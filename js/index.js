@@ -141,6 +141,8 @@ window.onload = () => {
 			loaded++;
 			return r.blob()
 		}));
+		loaded = 1;
+		proms.forEach(e => e.then((x) => {alertBox(`Loaded file ${loaded}`); loaded++; console.log(x)}))
 		Promise.all(proms).then(blobs => {
 			console.log("Started");
 			
